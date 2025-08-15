@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D ♡ C - Full Gallery</title>
+    <meta name="description" content="Full photo gallery of our memories." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<iframe src="music-player.html" id="music-frame" style="
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  z-index: 999999;
+  pointer-events: auto;
+">
+</iframe>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="brand">
+                <div class="brand">
+                    <div class="logo" aria-hidden="true">💌</div>
+                    <span>D ♡ C</span>
+                </div>
+            </a>
+            <nav class="links">
+                <a href="#story">Story</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#notes">Notes</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Full Gallery</h2>
+                    <p>All the captured moments in one place.</p>
+                </div>
+
+                <!-- Row 1: 2 foto besar -->
+                <div class="gallery-row large-photos">
+                    <img src="images/Lea (1).jpeg"
+                        alt="Large 1" data-lightbox>
+                    <img src="images/Lea (2).jpeg"
+                        alt="Large 2" data-lightbox>
+                </div>
+
+                <!-- Foto kecil -->
+                <div class="gallery-row small-photos" style="margin-top: 12px;">
+                    <img src="images/Couple First (1).jpeg"
+                        alt="Small 1" data-lightbox>
+                    <img src="images/Couple First (2).jpeg"
+                        alt="Small 2" data-lightbox>
+                    <img src="images/Couple First (3).jpeg"
+                        alt="Small 3" data-lightbox>
+                    <img src="images/Couple First (4).jpeg"
+                        alt="Small 4" data-lightbox>
+                    <img src="images/Couple First (5).jpeg"
+                        alt="Small 5" data-lightbox>
+                    <img src="images/Couple First (6).jpeg"
+                        alt="Small 6" data-lightbox>
+                    <img src="images/Couple First (7).jpeg"
+                        alt="Small 7" data-lightbox>
+                    <img src="images/Couple First (8).jpeg"
+                        alt="Small 8" data-lightbox>
+                    <img src="images/Couple First (9).jpeg"
+                        alt="Small 9" data-lightbox>
+                    <img src="images/Couple First (10).jpeg"
+                        alt="Small 10" data-lightbox>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px">
+            <span>© <span id="year"></span> Dudut & Culukubuy</span>
+            <span class="muted">Made with ♡</span>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <dialog id="lightbox">
+        <div class="lightbox-container">
+            <div class="lightbox-scroll">
+                <img id="lightbox-img" alt="Expanded image" />
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+    <script>
+        // Pastikan halaman muncul walaupun script.js error
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+
+</html>

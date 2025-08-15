@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>D ♡ C - Our Love Story</title>
+    <meta name="description"
+        content="A simple, modern, and aesthetic website narrating our love story from the first meet to today." />
+    <meta name="theme-color" content="#f6f5f3" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<iframe src="music-player.html" id="music-frame" style="
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: transparent;
+  z-index: 999999;
+  pointer-events: auto;
+">
+</iframe>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="index.html" class="brand">
+                <div class="brand">
+                    <div class="logo" aria-hidden="true">💌</div>
+                    <span>D ♡ C</span>
+                </div>
+            </a>
+            <nav class="links">
+                <a href="#story">Story</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#notes">Notes</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <!-- Tambahkan burger -->
+            <button class="burger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="tag">Since <span id="sinceText">2021</span> • <span id="daysTogether">0</span>
+                        days</span>
+                    <h1 class="title">Our Love Story</h1>
+                    <p class="subtitle">Two souls drawn together by fate, walking side by side through time weaving
+                        memories, love, and quite promises into forever.
+                        Ours is a story written not in haste, but in gentle chapters where every glance, words, and
+                        moments becomes timeless.
+                    </p>
+                    <div class="cta">
+                        <a class="btn primary" href="#story">Read our story</a>
+                        <a class="btn" href="#gallery">See memories</a>
+                    </div>
+                    <div class="chips" style="margin-top:18px">
+                        <a class="chip" href="https://instagram.com" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="chip" href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a class="chip" href="https://wa.me" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <img src="images/Couple First (12) Fixed.jpeg" alt="Couple warm portrait" />
+                    <div class="stamp">First met: <strong id="firstMet">Jan 15, 2021</strong></div>
+                </div>
+            </div>
+            <div class="scroll-down" onclick="document.querySelector('#story').scrollIntoView({behavior: 'smooth'})"
+                aria-label="Scroll Down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-down">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </section>
+
+        <!-- STORY / TIMELINE -->
+        <section id="story">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Our Story</h2>
+                    <p>Little moments that became everything.</p>
+                </div>
+                <div class="timeline">
+                    <!-- Timeline Items -->
+                    <article class="t-item">
+                        <img src="images/Couple First (4) Fixed.jpeg" alt="First meet at coffee shop" />
+                        <div class="t-meta"> <span>Nov 11, 2024</span> · <span>(Tempat)</span></div>
+                        <h3>We first met</h3>
+                        <p class="t-body">Ini isinya deskripsi yang menggambarkan dari setiap perjalanan kita dan ini
+                            belum aku isi nanti kita isi ketika kita bertemu yaa. Aku Cinta Kamu.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <img src="images/Couple First (2) Fixed.jpeg" alt="First date by the park" />
+                        <div class="t-meta"> <span>May 26, 2025</span> · <span>(Tempat)</span></div>
+                        <h3>We made it official</h3>
+                        <p class="t-body">Ini isinya deskripsi yang menggambarkan dari setiap perjalanan kita dan ini
+                            belum aku isi nanti kita isi ketika kita bertemu yaa. Aku Cinta Kamu.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <img src="images/Lea (1).jpeg" alt="Officially together" />
+                        <div class="t-meta"> <span>Jul 12, 2025</span> · <span>(Tempat)</span></div>
+                        <h3>I wuf you & you look so Gorgeous!</h3>
+                        <p class="t-body">Ini isinya deskripsi yang menggambarkan dari setiap perjalanan kita dan ini
+                            belum aku isi nanti kita isi ketika kita bertemu yaa. Aku Cinta Kamu.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <img src="images/Couple First (7) Fixed.jpeg" alt="Trip memories" />
+                        <div class="t-meta"> <span>Dec 11, 2024</span> · <span>(Tempat)</span></div>
+                        <h3>Our first date</h3>
+                        <p class="t-body">Ini isinya deskripsi yang menggambarkan dari setiap perjalanan kita dan ini
+                            belum aku isi nanti kita isi ketika kita bertemu yaa. Aku Cinta Kamu.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <img src="images/Couple First (22) Fixed.jpeg" alt="New home" />
+                        <div class="t-meta"> <span>Jun 05, 2025</span> · <span>(Tempat)</span></div>
+                        <h3>Happy moment</h3>
+                        <p class="t-body">Ini isinya deskripsi yang menggambarkan dari setiap perjalanan kita dan ini
+                            belum aku isi nanti kita isi ketika kita bertemu yaa. Aku Cinta Kamu.</p>
+                    </article>
+
+                    <article class="t-item">
+                        <img src="images/Lea (2).jpeg" alt="Today & beyond" />
+                        <div class="t-meta"> <span>Today</span> · <span>And beyond</span></div>
+                        <h3>Today & all our tomorrows</h3>
+                        <p class="t-body">We’re still writing. With patience, gratitude, and a thousand tiny gestures.
+                            Here’s to the love that grows quietly, beautifully, every day.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Gallery</h2>
+                    <p>Little frames of a bigger story.</p>
+                </div>
+
+                <!-- Row 1: 2 foto besar -->
+                <div class="gallery-row large-photos">
+                    <img src="images/Lea (1).jpeg" alt="Large 1" data-lightbox>
+                    <img src="images/Lea (2).jpeg" alt="Large 2" data-lightbox>
+                </div>
+
+                <!-- Row 2: 5 foto kecil -->
+                <div class="gallery-row small-photos">
+                    <img src="images/Couple First (21) Fixed.jpeg" alt="Small 1" data-lightbox>
+                    <img src="images/Couple First (15) Fixed.jpeg" alt="Small 2" data-lightbox>
+                    <img src="images/Couple First (13) Fixed.jpeg" alt="Small 3" data-lightbox>
+                    <img src="images/Couple First (1) Fixed.jpeg" alt="Small 4" data-lightbox>
+
+                    <!-- Foto ke-5 jadi View More -->
+                    <a href="gallery.html" class="view-more-tile">
+                        <img src="images/Couple First (12) Fixed.jpeg" alt="View More">
+                        <span class="view-more-text">+ View More</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTES / QUOTES -->
+        <section id="notes">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Notes to Each Other</h2>
+                    <p>Words we hold close.</p>
+                </div>
+                <div class="quotes">
+                    <blockquote class="q">
+                        <p>“Affection does not always mean love, but love always means affection, and within love there
+                            is a desire to belong. I truly love you.”</p>
+                        <footer>— Masio 🐯</footer>
+                    </blockquote>
+                    <blockquote class="q">
+                        <p>“Yapping Yapping Yapping Yapping Yapping Yapping Yapping Yapping Yapping Yapping Yapping
+                            Yapping Yapping Yapping Yapping Yapping Yapping."</p>
+                        <footer>— De Lani 🦁</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section aria-labelledby="stats-title">
+            <div class="container">
+                <h2 id="stats-title" class="sr">Milestones</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="num" id="yearsTogether">0</div>
+                        <div class="lbl">years together</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num" id="photosCount">30+</div>
+                        <div class="lbl">photos here</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">∞</div>
+                        <div class="lbl">inside jokes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="num">7</div>
+                        <div class="lbl">story that matters</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Say Hello</h2>
+                    <p>Leave a kind note or reach out for anything.</p>
+                </div>
+                <div class="grid" style="grid-template-columns: 1.2fr .8fr; gap: 18px">
+                    <div class="card shadow"
+                        style="background:var(--card); border:1px solid var(--ring); padding:18px; border-radius:18px">
+                        <form action="mailto:lildudut@gmail.com" method="post" enctype="text/plain">
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your email" required>
+                            <textarea name="message" placeholder="Your message"></textarea>
+                            <button class="btn primary" type="submit">Send</button>
+                            <p class="note">This opens your email app to send a message.
+                            </p>
+                        </form>
+                    </div>
+                    <div class="card shadow"
+                        style="background:var(--card); border:1px solid var(--ring); padding:18px; border-radius:18px">
+                        <h3 style="margin-top:0">Details</h3>
+                        <p class="muted">Our little personal info.</p>
+                        <ul style="list-style:none; padding:0; margin:0; display:grid; gap:6px">
+                            <li><strong>Couple:</strong> Fahrio Rafly Albantani ♡ Leandra Meylani</li>
+                            <li><strong>First met:</strong> <span id="firstMetDetail">2021-01-15</span></li>
+                            <li><strong>City:</strong> Bandung</li>
+                            <li><strong>Hashtag:</strong> <code>#OurQuietKindOfLove</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px">
+            <span>© <span id="year"></span> Dudut ♡ Culukubuy</span>
+            <span class="muted">Made with ♡</span>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <dialog id="lightbox">
+        <div class="lightbox-container">
+            <div class="lightbox-scroll">
+                <img id="lightbox-img" alt="Expanded image" />
+            </div>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

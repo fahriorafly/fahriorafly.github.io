@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <style>
+        body {
+            margin: 0;
+            background: transparent;
+        }
+
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999999;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .music-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="music-btn" id="music-control" title="Play/Pause Music">
+        <svg id="music-icon" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"></path>
+        </svg>
+    </div>
+
+    <audio id="bg-music" src="music/blue (slowed down).mp3" loop></audio>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const musicBtn = document.getElementById("music-control");
+        const musicIcon = document.getElementById("music-icon");
+
+        let isPlaying = false;
+
+        // Ambil status dan waktu terakhir
+        const savedStatus = localStorage.getItem("musicStatus");
+        const savedTime = localStorage.getItem("musicTime");
+        if (savedTime) music.currentTime = parseFloat(savedTime);
+
+        // Fungsi untuk update icon jadi pause
+        function setPauseIcon() {
+            musicIcon.innerHTML = '<rect x="6" y="5" width="4" height="14"></rect>' +
+                '<rect x="14" y="5" width="4" height="14"></rect>';
+        }
+
+        // Fungsi untuk update icon jadi play
+        function setPlayIcon() {
+            musicIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+        }
+
+        // Coba autoplay saat load
+        window.addEventListener("load", () => {
+            if (savedStatus === "playing" || savedStatus === null) {
+                music.play().then(() => {
+                    isPlaying = true;
+                    setPauseIcon();
+                    localStorage.setItem("musicStatus", "playing");
+                }).catch(() => {
+                    // Kalau gagal, biarkan listener interaksi yang handle
+                });
+            }
+        });
+
+        // Simpan waktu musik
+        music.addEventListener("timeupdate", () => {
+            localStorage.setItem("musicTime", music.currentTime);
+        });
+
+        // Tombol kontrol musik
+        musicBtn.addEventListener("click", () => {
+            if (isPlaying) {
+                music.pause();
+                setPlayIcon();
+                localStorage.setItem("musicStatus", "paused");
+            } else {
+                music.play();
+                setPauseIcon();
+                localStorage.setItem("musicStatus", "playing");
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Play otomatis saat interaksi pertama (fallback)
+        const startMusic = () => {
+            if (!isPlaying) {
+                music.play().then(() => {
+                    isPlaying = true;
+                    setPauseIcon();
+                    localStorage.setItem("musicStatus", "playing");
+                }).catch(() => { });
+            }
+            window.removeEventListener("click", startMusic);
+            window.removeEventListener("keydown", startMusic);
+            window.removeEventListener("scroll", startMusic);
+        };
+        window.addEventListener("click", startMusic);
+        window.addEventListener("keydown", startMusic);
+        window.addEventListener("scroll", startMusic);
+        
+    </script>
+
+</body>
+
+</html>
