@@ -69,6 +69,30 @@
             line-height: 1.05;
         }
 
+        @keyframes heartbeatWhite {
+            0% {
+                text-shadow: 0 0 2px rgba(255, 255, 255, 0.15);
+                opacity: 0.55;
+            }
+
+            40% {
+                text-shadow:
+                    0 0 6px rgba(255, 255, 255, 0.6),
+                    0 0 14px rgba(255, 255, 255, 0.35);
+                opacity: 0.95;
+            }
+
+            100% {
+                text-shadow: 0 0 2px rgba(255, 255, 255, 0.15);
+                opacity: 0.55;
+            }
+        }
+
+        .ascii-heartbeat {
+            animation: heartbeatWhite 2.22s ease-in-out infinite;
+            color: #ffffff;
+        }
+
         /* Falling layers */
         .hearts,
         .quotes {
@@ -149,8 +173,8 @@
             My heart never meant to hurt yours. I hope our story continues endlessly.
         </p>
 
-        <p>~ Dudut  Culukubuy ~</p>
-        <pre class="ascii-art ascii-bottom">
+        <p>~ Dudut Culukubuy ~</p>
+        <pre class="ascii-art ascii-bottom ascii-heartbeat">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡾⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⠴⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠇
