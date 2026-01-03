@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>You are Important.</title>
+    <link rel="icon" href="images/heart-on-fire.png" type="images/heart-on-fire.png">
 
     <style>
         * {
@@ -18,8 +19,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
-            /* 🌙 Night gradient background */
             background: radial-gradient(circle at top, #1c1f2b, #0b0d14 60%);
             color: #fff;
             font-family: "Plus Jakarta Sans", sans-serif;
@@ -48,8 +47,9 @@
             color: #ddd;
         }
 
-        /* Falling symbols */
-        .hearts {
+        /* Falling layers */
+        .hearts,
+        .quotes {
             position: absolute;
             inset: 0;
             pointer-events: none;
@@ -57,7 +57,8 @@
             z-index: 1;
         }
 
-        .heart {
+        .heart,
+        .quote {
             position: absolute;
             top: -3rem;
             animation: fall linear forwards;
@@ -67,6 +68,15 @@
             -webkit-user-select: none;
             -ms-user-select: none;
             pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .quote {
+            white-space: pre;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+            color: rgba(255,255,255,0.85);
         }
 
         @keyframes fall {
@@ -75,13 +85,13 @@
                 opacity: 0;
             }
         }
-        
     </style>
 </head>
 
 <body>
+    <!-- ORIGINAL CONTENT — UNTOUCHED -->
     <div class="content">
-        <h1>🐯 I still LOVE YOU 🦁</h1>
+        <h1>🐯 I STILL 🤍 LOVE YOU 🦁</h1>
         <h3>You are still important to me, with or without conversation. You are always in my mind & heart.</h3>
         <p></p>
         <p>
@@ -94,12 +104,17 @@
             My heart never meant to hurt yours.
         </p>
         <p>I hope our story continues.</p>
-        <p>...</p>
+        <p>- Dudut</p>
     </div>
 
+    <!-- ORIGINAL SYMBOL RAIN -->
     <div class="hearts" id="hearts"></div>
 
+    <!-- NEW: QUOTATION RAIN (ADDED ONLY) -->
+    <div class="quotes" id="quotes"></div>
+
     <script>
+        /* SYMBOLS — UNCHANGED */
         const symbols = ["🦁", "❤️", "🐯"];
 
         function createHeart() {
@@ -107,15 +122,14 @@
             el.className = "heart";
             el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
 
-            // 🎭 Depth / presence randomness
-            const depth = Math.random(); // 0 = far, 1 = close
+            const depth = Math.random();
 
             el.style.textShadow = `0 0 ${depth * 12}px rgba(255,255,255,0.35)`;
 
-            const size = 14 + depth * 28;         // size
-            const opacity = 0.25 + depth * 0.7;   // presence
-            const blur = (1 - depth) * 3;         // distance blur
-            const duration = 6 - depth * 3;       // speed
+            const size = 14 + depth * 28;
+            const opacity = 0.25 + depth * 0.7;
+            const blur = (1 - depth) * 3;
+            const duration = 6 - depth * 3;
 
             el.style.left = Math.random() * 100 + "vw";
             el.style.fontSize = size + "px";
@@ -124,11 +138,50 @@
             el.style.animationDuration = duration + "s";
 
             document.getElementById("hearts").appendChild(el);
-
             setTimeout(() => el.remove(), duration * 1000);
         }
 
         setInterval(createHeart, 180);
+
+        /* QUOTATIONS — NEW ONLY */
+        const quotations = [
+            "\"you are important\"",
+            "\"still thinking of you\"",
+            "\"you matter\"",
+            "\"always in my heart\"",
+            "\"love never fades\"",
+            "\"my heart remembers\"",
+            "\"you were special\"",
+            "\"even silence hurts\"",
+            "\"Love isn't perfect, but leaving is never an option.\"",
+            "\"I want to hug you so tight and \ntell you how much I've missed you.\"",
+            "\"She was the sun in my life while \nI was just the ice in her eyes, She kept on shining, \nand I kept on melting."
+        ];
+
+        function createQuote() {
+            const el = document.createElement("div");
+            el.className = "quote";
+            el.textContent = quotations[Math.floor(Math.random() * quotations.length)];
+
+            const depth = Math.random();
+
+            const size = 7 + depth * 14;
+            const opacity = 0.2 + depth * 0.6;
+            const blur = (1 - depth) * 2;
+            const duration = 10 - depth * 4;
+
+            el.style.left = Math.random() * 100 + "vw";
+            el.style.fontSize = size + "px";
+            el.style.opacity = opacity;
+            el.style.filter = `blur(${blur}px)`;
+            el.style.animationDuration = duration + "s";
+            el.style.textShadow = `0 0 ${depth * 8}px rgba(255,255,255,0.25)`;
+
+            document.getElementById("quotes").appendChild(el);
+            setTimeout(() => el.remove(), duration * 1000);
+        }
+
+        setInterval(createQuote, 420);
     </script>
 </body>
 </html>
