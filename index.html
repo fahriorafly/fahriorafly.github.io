@@ -207,28 +207,53 @@
         const symbols = ["🦁", "❤️", "🐯"];
 
         function createHeart() {
-            const el = document.createElement("div");
-            el.className = "heart";
-            el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-
+            const symbol = symbols[Math.floor(Math.random() * symbols.length)];
             const depth = Math.random();
 
-            el.style.textShadow = `0 0 ${depth * 12}px rgba(255,255,255,0.35)`;
-
-            const size = 14 + depth * 28;
-            const opacity = 0.25 + depth * 0.7;
-            const blur = (1 - depth) * 3;
+            const size = 16 + depth * 30;
             const duration = 6 - depth * 3;
+            const blur = (1 - depth) * 2;
 
+            /* MAIN SYMBOL */
+            const el = document.createElement("div");
+            el.className = "heart";
+            el.textContent = symbol;
             el.style.left = Math.random() * 100 + "vw";
             el.style.fontSize = size + "px";
-            el.style.opacity = opacity;
-            el.style.filter = `blur(${blur}px)`;
             el.style.animationDuration = duration + "s";
+            el.style.filter = `blur(${blur}px)`;
+            el.style.textShadow = `
+        0 0 8px rgba(255,255,255,0.2),
+        0 0 16px rgba(255,255,255,0.2),
+        0 0 28px rgba(255,255,255,0.2)
+    `;
 
-            document.getElementById("hearts").appendChild(el);
-            setTimeout(() => el.remove(), duration * 1000);
+            /* 🔥 GLOW TRAIL */
+            const trail = document.createElement("div");
+            trail.className = "heart";
+            trail.textContent = symbol;
+            trail.style.left = el.style.left;
+            trail.style.fontSize = size + "px";
+            trail.style.animationDuration = duration + "s";
+            trail.style.transform = "translateY(-22px)";
+            trail.style.opacity = "0.1";
+            trail.style.filter = "blur(10px)";
+            trail.style.textShadow = `
+        0 0 20px rgba(255,255,255,0.2),
+        0 0 40px rgba(255,255,255,0.2),
+        0 0 70px rgba(255,255,255,0.2)
+    `;
+
+            const container = document.getElementById("hearts");
+            container.appendChild(trail);
+            container.appendChild(el);
+
+            setTimeout(() => {
+                el.remove();
+                trail.remove();
+            }, duration * 1000);
         }
+
 
         setInterval(createHeart, 444);
 
