@@ -47,6 +47,20 @@
             color: #ddd;
         }
 
+        .ascii-art {
+            font-family: monospace;
+            font-size: 6px;
+            /* small */
+            line-height: 1.1;
+            opacity: 0.6;
+            margin-top: 6px;
+            white-space: pre;
+            position: relative;
+            z-index: 4;
+            /* IMPORTANT: keep ASCII shape */
+            user-select: none;
+        }
+
         /* Falling layers */
         .hearts,
         .quotes {
@@ -76,7 +90,7 @@
             text-align: center;
             font-weight: 300;
             letter-spacing: 0.3px;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         @keyframes fall {
@@ -100,11 +114,33 @@
             for the time we shared and the person you were to me.
         </p>
         <p>
-            I’m sorry for the mistakes, the words unspoken, and the times I failed you. <br>
-            My heart never meant to hurt yours.
+            I’m sorry for the mistakes, the words unspoken, and the times I failed you, deeply. <br>
+            My heart never meant to hurt yours. I hope our story continues endlessly.
         </p>
-        <p>I hope our story continues.</p>
-        <p>- Dudut</p>
+        <div class="ascii-art">
+⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣮⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣧⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⡁⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⡉⠁⠀⠀⠀⠀⠀⠀⠀⣀⣼⣿⣿⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣅⠀⠀⠀⠀⠀⢀⣤⣾⡿⠿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣆⠀⣠⣶⣾⣿⡏⠁⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⠀⠀ ⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡟⠀⠀ ⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠂⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡇⠀⠀ ⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⡇⠀⠀ ⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣤⣤⣤⣀⠀⠀⠀⠘⠻⣿⣿⣿⡿⠛ ⠀⠀ ⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⢻⣿⣿⣿⡀⠀⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⡇⠀⠀⠀⠀⢸⣿⣿⣿⣿⣦⠀⠀⠀ ⠀
+⠀⠀⠀⠀⠀⠀⠀⠉⠙⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⢸⣿⣿⣿⠃⠀⠀⠀⠀⠈⣿⣿⡿⣿⣿⣧⠀⠀⠀⠀
+⣀⡀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⡇⠀⠀⠀⠀⢺⣿⣿⣿⠀⠀⠀⠀⠀⠀⢻⣿⡇⠈⢿⣿⣇⠀⠀⠀
+⣿⣿⣿⣶⣦⣤⣤⣀⡀⠘⣿⣿⣿⣿⡇⠀⠀⠀⠀⣾⣿⣿⣿⠀⠀⠀⠀⠀⠀⢸⣿⣇⠀⠈⢿⣿⣦⣀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⠃⠀⠀⠀⢠⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⣸⣿⣿⡆⠀⢸⣿⣿⢿⡀
+⠙⠻⠿⠎⠉⠙⠛⠛⠿⢿⣿⣿⣿⠟⠀⠀⠀⠀⠸⣿⣿⣿⣿⣷⣶⡦⠀⢀⣴⣿⠟⢻⠃⠀⣴⣿⠇⠈⠃
+        </div>
+        <p>Dudut 𖹭 Culukubuy</p>
     </div>
 
     <!-- ORIGINAL SYMBOL RAIN -->
@@ -141,7 +177,7 @@
             setTimeout(() => el.remove(), duration * 1000);
         }
 
-        setInterval(createHeart, 180);
+        setInterval(createHeart, 444);
 
         /* QUOTATIONS — NEW ONLY */
         const quotations = [
@@ -153,7 +189,8 @@
             "\"my heart remembers\"",
             "\"you were special\"",
             "\"even silence hurts\"",
-            "\"Love isn't perfect, but leaving is never an option.\"",
+            "\"I don't want to Lose You\""
+            , "\"Love isn't perfect,\nbut leaving is never an option.\"",
             "\"I want to hug you so tight and \ntell you how much I've missed you.\"",
             "\"She was the sun in my life while \nI was just the ice in her eyes, She kept on shining, \nand I kept on melting."
         ];
@@ -181,7 +218,8 @@
             setTimeout(() => el.remove(), duration * 1000);
         }
 
-        setInterval(createQuote, 420);
+        setInterval(createQuote, 555);
     </script>
 </body>
+
 </html>
