@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You are Important.</title>
+    <link rel="icon" href="images/heart-on-fire.png" type="images/heart-on-fire.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 🌙 Night gradient background */
+            background: radial-gradient(circle at top, #1c1f2b, #0b0d14 60%);
+            color: #fff;
+            font-family: "Plus Jakarta Sans", sans-serif;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+        }
+
+        .content h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        /* Falling symbols */
+        .hearts {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            top: -3rem;
+            animation: fall linear forwards;
+            will-change: transform, opacity;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>🐯 I still LOVE YOU 🦁</h1>
+        <h3>You are still important to me, with or without conversation. You are always in my mind & heart.</h3>
+        <p></p>
+        <p>
+            Thank you for everything. For the love, the laughter, the memories,
+            and all the little moments that made my world brighter. I will always be grateful
+            for the time we shared and the person you were to me.
+        </p>
+        <p>
+            I’m sorry for the mistakes, the words unspoken, and the times I failed you. <br>
+            My heart never meant to hurt yours.
+        </p>
+        <p>I hope our story continues.</p>
+        <p>...</p>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+
+    <script>
+        const symbols = ["🦁", "❤️", "🐯"];
+
+        function createHeart() {
+            const el = document.createElement("div");
+            el.className = "heart";
+            el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+            // 🎭 Depth / presence randomness
+            const depth = Math.random(); // 0 = far, 1 = close
+
+            el.style.textShadow = `0 0 ${depth * 12}px rgba(255,255,255,0.35)`;
+
+            const size = 14 + depth * 28;         // size
+            const opacity = 0.25 + depth * 0.7;   // presence
+            const blur = (1 - depth) * 3;         // distance blur
+            const duration = 6 - depth * 3;       // speed
+
+            el.style.left = Math.random() * 100 + "vw";
+            el.style.fontSize = size + "px";
+            el.style.opacity = opacity;
+            el.style.filter = `blur(${blur}px)`;
+            el.style.animationDuration = duration + "s";
+
+            document.getElementById("hearts").appendChild(el);
+
+            setTimeout(() => el.remove(), duration * 1000);
+        }
+
+        setInterval(createHeart, 180);
+    </script>
+</body>
+</html>

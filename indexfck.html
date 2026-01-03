@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuck My Life</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: #fff;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+
+    .content h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      color: #ddd;
+    }
+
+    /* Falling hearts background */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      top: -2rem;
+      font-size: 1.5rem;
+      color: crimson;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>💔 This website is fcked up 💔</h1>
+    <p>
+      Thank you for everything. For the love, the laughter, the memories,  
+      and all the little moments that made my world brighter.  
+      Even though the story has reached its end, I will always be grateful  
+      for the time we shared and the person you were to me.
+    </p>
+    <p>
+      I’m sorry for the mistakes, the words unspoken, and the times I failed you.  
+      If I could turn back time, I would hold on tighter and love you better.  
+      Please forgive me, for my heart never meant to hurt yours.
+    </p>
+    <p>
+      (Nov 11, 2024 - Aug 30, 2025)
+    </p>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "💔";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s"; 
+      heart.style.fontSize = (16 + Math.random() * 24) + "px"; 
+      document.getElementById("hearts").appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000); 
+    }
+
+    setInterval(createHeart, 200); 
+  </script>
+</body>
+</html>
